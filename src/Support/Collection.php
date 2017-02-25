@@ -1,4 +1,5 @@
 <?php
+
 namespace Mingyoung\Alidayu\Support;
 
 use ArrayAccess;
@@ -9,6 +10,7 @@ class Collection implements ArrayAccess
 
     /**
      * Collection constructor.
+     *
      * @param array $items
      */
     public function __construct(array $items)
@@ -19,17 +21,17 @@ class Collection implements ArrayAccess
     /**
      * Run a map over each of the items.
      *
-     * @param  callable  $callback
+     * @param callable $callback
+     *
      * @return static
      */
     public function map(callable $callback)
     {
         $keys = array_keys($this->items);
         $items = array_map($callback, $this->items, $keys);
+
         return new static(array_combine($keys, $items));
     }
-
-
 
     public function offsetExists($offset)
     {

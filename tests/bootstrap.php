@@ -1,13 +1,15 @@
 <?php
 
-require_once(__DIR__.'/../vendor/autoload.php');
+require_once __DIR__.'/../vendor/autoload.php';
 
-require_once(__DIR__.'/TestCase.php');
+require_once __DIR__.'/TestCase.php';
 
-function appKey(){
-	return 'app-key';
+function appKey()
+{
+    return 'app-key';
 }
 
-function appSecret(){
-	return 'app-secret';
+function appSecret()
+{
+    return 'app-secret';
 }

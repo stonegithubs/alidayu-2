@@ -38,6 +38,7 @@ class Errors
      * Get message by code.
      *
      * @param $code
+     *
      * @return string
      */
     public static function getMessage($code)

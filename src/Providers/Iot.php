@@ -9,6 +9,6 @@ class Iot extends AbstractProvider
     protected $methodToVarMaps = [
         'billSource' => 'bill_source|required',
         'billReal' => 'bill_real|required',
-        'iccid' => 'iccid|required'
+        'iccid' => 'iccid|required',
     ];
 }

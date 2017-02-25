@@ -1,11 +1,12 @@
 <?php
+
 namespace Mingyoung\Alidayu\Core;
 
 class Http
 {
     protected $connectTimeout;
     protected $readTimeout;
-    
+
     public function curl($url, $postFields = null)
     {
         $ch = curl_init();
