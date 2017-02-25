@@ -1,0 +1,24 @@
+{
+    "name": "mingyoung/alidayu",
+    "description": "Alidayu SDK.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mingyoung",
+            "email": "mingyoungcheung@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mingyoung\\Alidayu\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    }
+}
