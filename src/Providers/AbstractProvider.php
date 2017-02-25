@@ -63,7 +63,7 @@ abstract class AbstractProvider implements ProviderInterface
      * Magic access.
      *
      * @param string $method
-     * @param array $args
+     * @param array  $args
      *
      * @return $this
      */
@@ -91,7 +91,7 @@ abstract class AbstractProvider implements ProviderInterface
         foreach ($this->methodToVarMaps as $method => $param) {
             $explodeRule = explode('|', $param);
             if (count($explodeRule) > 1) {
-                if ($explodeRule[1] == 'required') {
+                if ($explodeRule[1] === 'required') {
                     $required[] = $explodeRule[0];
                 }
             }

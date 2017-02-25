@@ -12,6 +12,6 @@ class IotRecharge extends AbstractProvider
         'offer_id' => 'offer_id|required',
         'outRechargeId' => 'out_recharge_id|required',
         'iccid' => 'iccid|required',
-        'effCode' => 'eff_code|required'
+        'effCode' => 'eff_code|required',
     ];
 }

@@ -14,7 +14,6 @@ class Alidayu
     protected $gatewayUrl = 'https://eco.taobao.com/router/rest';
     protected $sdkVersion = 'top-sdk-php-20151012';
 
-
     protected $provider;
 
     protected $client;
@@ -67,11 +66,11 @@ class Alidayu
 
         //系统参数放入GET请求串
         if ($bestUrl) {
-            $requestUrl = $bestUrl."?";
-            $sysParams["partner_id"] = $this->getClusterTag();
+            $requestUrl = $bestUrl.'?';
+            $sysParams['partner_id'] = $this->getClusterTag();
         } else {
-            $requestUrl = $this->gatewayUrl."?";
-            $sysParams["partner_id"] = $this->sdkVersion;
+            $requestUrl = $this->gatewayUrl.'?';
+            $sysParams['partner_id'] = $this->sdkVersion;
         }
         //签名
         $sysParams['sign'] = $this->encryptor->encrypt(array_merge($apiParams, $sysParams), $this->client->getAppSecret());
@@ -79,7 +78,6 @@ class Alidayu
         foreach ($sysParams as $sysParamKey => $sysParamValue) {
             $requestUrl .= "$sysParamKey=".urlencode($sysParamValue).'&';
         }
-
 
         $fileFields = array();
         foreach ($apiParams as $key => $value) {
@@ -139,18 +137,18 @@ class Alidayu
         }
 
         //如果TOP返回了错误码，记录到业务错误日志中
-  
+
         if (isset($respObject['code'])) {
             $sub_code = $respObject['sub_code'];
-            $sub_msg=$respObject['sub_msg'];
+            $sub_msg = $respObject['sub_msg'];
 
             $errors = [
-                'errcode'=>$sub_code,
-                'errmsg' => Errors::getMessage($sub_code)
+                'errcode' => $sub_code,
+                'errmsg' => Errors::getMessage($sub_code),
             ];
 
             return $errors;
-            
+
          // $logger = new Logger;
          // $logger->conf["log_file"] = rtrim(TOP_SDK_WORK_DIR, '\\/') . '/' . "logs/top_biz_err_" . $this->appkey . "_" . date("Y-m-d") . ".log";
          // $logger->log(array(
@@ -158,6 +156,7 @@ class Alidayu
          //     $resp
          //     ));
         }
+
         return $respObject;
     }
 }
